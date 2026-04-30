@@ -178,6 +178,30 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        {/* Proiect Mama Section */}
+        <section className="w-full max-w-6xl px-4 pb-32 mx-auto border-t border-white/10 pt-20">
+          <div className="bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-3xl p-8 md:p-16 backdrop-blur-sm transition-all hover:bg-white/[0.07]">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-400 text-xs font-bold uppercase tracking-widest">
+                Proiect mamă
+              </div>
+              <span className="text-white/40 text-sm font-medium tracking-widest uppercase">· context</span>
+            </div>
+            
+            <h2 className="text-white text-3xl md:text-5xl font-bold tracking-tight mb-6 leading-tight max-w-4xl">
+              Platformă Națională pentru Tehnologiile Semiconductorilor
+            </h2>
+            
+            <a href="https://research4industry.ro" target="_blank" rel="noopener noreferrer" className="inline-block text-cyan-400 hover:text-cyan-300 text-lg md:text-xl font-medium mb-12 transition-colors border-b border-cyan-400/30 hover:border-cyan-300 pb-1">
+              research4industry.ro
+            </a>
+            
+            <p className="text-white/70 text-lg md:text-xl font-light leading-relaxed max-w-4xl">
+              <strong className="text-white font-medium">ChainChampion</strong> e linia noastră de lucru în ecosistemul PNTS — acolo unde semiconductorii și senzorii întâlnesc software-ul care le dă voce.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   )
