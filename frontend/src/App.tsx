@@ -32,7 +32,7 @@ export default function App() {
           color="#22d3ee"
           speed={0.3}
           direction="backward"
-          scale={1}
+          scale={0.5}
           opacity={0.8}
           mouseInteractive
         />
