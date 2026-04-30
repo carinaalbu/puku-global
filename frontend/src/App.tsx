@@ -1,4 +1,5 @@
 import Plasma from '@/components/Plasma.jsx'
+import SplitText from '@/components/SplitText.jsx'
 
 export default function App() {
   return (
@@ -28,83 +29,105 @@ export default function App() {
       
       <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 0, pointerEvents: 'auto' }}>
         <Plasma
-          color="#00a5be"
-          speed={0.4}
+          color="#22d3ee"
+          speed={0.3}
           direction="backward"
           scale={1}
-          opacity={1}
+          opacity={0.8}
           mouseInteractive
         />
       </div>
       
       {/* Content will go above this background */}
-      <div className="relative z-10 min-h-screen pointer-events-auto">
+      <div className="relative z-10 min-h-screen pointer-events-auto flex flex-col items-center">
         {/* Floating Glassmorphism Pill Navbar */}
          <nav 
           style={{ 
             margin: '20px',
-            border: '1px solid rgba(156, 163, 175, 0.2)', // grey-400 with 20% opacity
-            padding: '10px'
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            padding: '12px 24px'
           }}
-          className="fixed top-10 left-1/2 -translate-x-1/2 w-[90vw] max-w-4xl 
-                     rounded-full
-                     bg-white/7 backdrop-blur-[24px] backdrop-saturate-150
-                     shadow-[0_8px_32px_rgba(0,0,0,0.2)]
+          className="fixed top-10 left-1/2 -translate-x-1/2 w-[98vw] max-w-[1600px] 
+                     rounded-3xl
+                     bg-white/5 backdrop-blur-2xl
+                     shadow-[0_8px_32px_rgba(0,0,0,0.3)]
                      flex items-center justify-between"
         >
           {/* Logo Left */}
-          <div className="flex items-center">
+          <div className="flex items-center gap-2">
             <img 
               src="/src/assets/icons/Puku_logo_white.png" 
               alt="PUKU Global Logo" 
-              style={{ height: '50px', width: 'auto' }}
+              style={{ height: '40px', width: 'auto' }}
             />
           </div>
 
           {/* Navigation Links Center/Right */}
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-white/80 hover:text-white transition-colors text-sm">
-              Despre
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#" className="text-white/60 hover:text-white transition-colors text-sm font-medium">
+              Servicii
             </a>
-            <a href="#" className="text-white/80 hover:text-white transition-colors text-sm">
-              Soluții
-            </a>
-            <a href="#" className="text-white/80 hover:text-white transition-colors text-sm">
-              Proiecte
-            </a>
-            <a href="#" className="text-white/80 hover:text-white transition-colors text-sm">
-              Contact
+            <a href="#" className="text-white/60 hover:text-white transition-colors text-sm font-medium">
+              Companie
             </a>
           </div>
 
           {/* CTA Button Far Right */}
-          <button className="px-5 py-2 rounded-full bg-white/10 hover:bg-white/15 border border-white/15 text-white text-sm font-medium transition-all">
-            Contactează-ne
+          <button className="px-6 py-2.5 rounded-xl bg-white text-black text-sm font-bold hover:bg-white/90 transition-all">
+            Sign up
           </button>
         </nav>
 
         {/* Page Content Container */}
-        <div className="pt-32 h-[calc(100vh-150px)] flex flex-col items-center justify-center px-4">
-          <div className="flex flex-wrap items-center justify-center gap-10 mt-12 w-full max-w-5xl mx-auto">
-            {/* Box 1 */}
-            <div className="flex items-center justify-center w-80 h-24 rounded-full bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 transition-all duration-300 shadow-[0_10px_40px_-10px_rgba(219,39,119,0.8)] hover:shadow-[0_15px_50px_-10px_rgba(219,39,119,1)] cursor-pointer hover:-translate-y-2">
-              <span className="text-white font-extrabold text-xl tracking-wide flex items-center gap-3">
-                <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                </svg>
-                Știință aplicată
-              </span>
+        <div className="pt-64 flex flex-col items-center text-center px-4 max-w-6xl">
+          {/* Nested Pill Badge */}
+          <div className="flex items-center gap-4 px-1.5 py-1.5 pr-6 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-10 cursor-default group hover:bg-white/10 transition-all">
+            <div className="px-5 py-2 rounded-full bg-white text-black text-[11px] font-black uppercase tracking-widest">
+              Știință aplicată
             </div>
+            <span className="text-white text-[13px] font-bold tracking-wide">
+              Lanțuri de valoare
+            </span>
+          </div>
 
-            {/* Box 2 */}
-            <div className="flex items-center justify-center w-80 h-24 rounded-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 shadow-[0_10px_40px_-10px_rgba(8,145,178,0.8)] hover:shadow-[0_15px_50px_-10px_rgba(8,145,178,1)] cursor-pointer hover:-translate-y-2">
-              <span className="text-white font-extrabold text-xl tracking-wide flex items-center gap-3">
-                <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-                </svg>
-                Lanțuri de valoare
-              </span>
-            </div>
+          {/* Tagline Badge */}
+          <div className="mb-6 flex items-center gap-2.5 text-cyan-400 font-bold tracking-wider text-[11px] uppercase bg-cyan-400/10 px-4 py-1.5 rounded-full border border-cyan-400/20 backdrop-blur-sm shadow-[0_0_15px_rgba(34,211,238,0.1)]">
+            <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#22d3ee]" />
+            Trasabilitate. Făcută altfel.
+          </div>
+
+          {/* Main Content Section */}
+          <div className="flex flex-col items-center mb-16 max-w-6xl">
+            <SplitText
+              text="IoT, inteligență artificială și mecanisme de încredere pentru date"
+              className="text-white text-4xl md:text-7xl font-bold leading-tight tracking-tighter mb-12"
+              delay={30}
+              duration={1.25}
+              ease="power3.out"
+              splitType="words,chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="center"
+              tag="h1"
+            />
+            
+            <div className="h-px w-32 bg-gradient-to-r from-transparent via-cyan-400 to-transparent mb-12 opacity-30" />
+            
+            <p className="text-white/60 text-xl md:text-2xl font-medium leading-relaxed max-w-4xl px-6 italic">
+              — ca bunurile critice din sănătate, industria auto și industria alimentară să rămână autentice, monitorizate și verificabile de la sursă la destinație.
+            </p>
+          </div>
+
+          {/* Buttons */}
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <button className="px-10 py-4 rounded-2xl bg-white text-black font-bold text-base hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+              Get started
+            </button>
+            <button className="px-10 py-4 rounded-2xl bg-white/5 border border-white/10 text-white font-semibold text-base hover:bg-white/10 transition-all backdrop-blur-md hover:scale-105 active:scale-95">
+              Learn more
+            </button>
           </div>
         </div>
       </div>
